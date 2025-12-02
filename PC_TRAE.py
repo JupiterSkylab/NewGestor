@@ -87,6 +87,32 @@ def center_window(window, width=860, height=650):
             pass
 
 
+def _obter_descricao_item(item_id, processo=None):
+    try:
+        v = tabela.set(item_id, 'descricao')
+        return v if v is not None else ""
+    except Exception:
+        if processo and len(processo) > 11 and processo[11] is not None:
+            return processo[11]
+        return ""
+
+
+def _set_observacoes_text(text, editable):
+    try:
+        entrada_descricao.config(state='normal')
+    except Exception:
+        pass
+    entrada_descricao.delete("1.0", tk.END)
+    entrada_descricao.insert("1.0", text or "")
+    if editable:
+        entrada_descricao.config(bg="white")
+    else:
+        try:
+            entrada_descricao.config(state='disabled', bg="#ECEFF1")
+        except Exception:
+            pass
+
+
 class DateUtils:
     FORMATO_EXIBICAO = "%d/%m/%Y"
     FORMATO_BANCO = "%Y-%m-%d"
