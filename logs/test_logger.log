@@ -1,0 +1,6 @@
+2025-08-06 14:16:16 - test_logger - INFO - log_operation:74 - Teste de operação - SUCCESS - Detalhes do teste
+2025-08-06 14:16:16 - test_logger - ERROR - log_error:64 - Contexto de teste: ValueError: Erro de teste
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\test_cache_integration.py", line 96, in test_logger_functionality
+    raise ValueError("Erro de teste")
+ValueError: Erro de teste

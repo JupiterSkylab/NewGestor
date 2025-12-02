@@ -1,0 +1,484 @@
+2025-08-11 15:14:08 - interface - ERROR - log_error:64 - Erro ao obter secretarias: AttributeError: 'NoneType' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1171, in _get_formatted_secretarias
+    return [f"{codigo} - {nome}" for codigo, nome in secretarias.items()]
+                                                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'items'
+2025-08-11 15:14:08 - interface - ERROR - log_error:64 - Erro ao carregar nomes: AttributeError: 'ProcessController' object has no attribute 'get_autocomplete_names'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1179, in _load_autocomplete_names
+    return self.controllers['process'].get_autocomplete_names()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_autocomplete_names'
+2025-08-11 15:14:08 - interface - ERROR - log_error:64 - Erro ao obter secretarias: AttributeError: 'NoneType' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1171, in _get_formatted_secretarias
+    return [f"{codigo} - {nome}" for codigo, nome in secretarias.items()]
+                                                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'items'
+2025-08-11 15:14:08 - interface - ERROR - log_error:64 - Erro ao atualizar tabela: AttributeError: 'ProcessController' object has no attribute 'list_processes'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1279, in _refresh_table
+    processes = self.controllers['process'].list_processes()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'list_processes'. Did you mean: 'listar_processos'?
+2025-08-11 15:14:14 - interface - ERROR - log_error:64 - Erro ao atualizar tabela: AttributeError: 'ProcessController' object has no attribute 'list_processes'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1279, in _refresh_table
+    processes = self.controllers['process'].list_processes()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'list_processes'. Did you mean: 'listar_processos'?
+2025-08-11 15:14:16 - interface - ERROR - log_error:64 - Erro ao atualizar tabela: AttributeError: 'ProcessController' object has no attribute 'list_processes'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1279, in _refresh_table
+    processes = self.controllers['process'].list_processes()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'list_processes'. Did you mean: 'listar_processos'?
+2025-08-11 15:15:31 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].get_statistics()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:41 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].get_statistics()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:41 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].get_statistics()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:41 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].get_statistics()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:42 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].get_statistics()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:42 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].get_statistics()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:42 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].get_statistics()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:42 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:44 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:44 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:44 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:45 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:45 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:45 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:46 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:46 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:46 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:46 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:47 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:47 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:47 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:47 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:48 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:48 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:48 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-08-11 15:15:48 - interface - ERROR - log_error:64 - Erro ao atualizar estatísticas: AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+Traceback (most recent call last):
+  File "C:\Users\User\Downloads\VSCODE TESTE\views\main_view.py", line 1317, in _update_statistics
+    stats = self.controllers['process'].obter_estatisticas()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ProcessController' object has no attribute 'get_statistics'
+2025-10-29 10:17:45 - interface - ERROR - log_error:64 - Erro ao executar aplicação: AttributeError: 'MainView' object has no attribute 'run'
+Traceback (most recent call last):
+  File "c:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1865, in run_application
+    view.run()
+    ^^^^^^^^
+AttributeError: 'MainView' object has no attribute 'run'
+2025-11-05 13:16:53 - interface - ERROR - log_error:64 - Erro ao executar aplicação: AttributeError: 'MainView' object has no attribute 'run'
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 2019, in run_application
+    view.run()
+    ^^^^^^^^
+AttributeError: 'MainView' object has no attribute 'run'
+2025-11-05 13:18:55 - interface - ERROR - log_error:64 - Erro ao executar aplicação: KeyError: 'nome_arquivo'
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1742, in run
+    self.setup_controllers()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 213, in setup_controllers
+    self.controllers['process'] = ProcessController()
+                                  ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\controllers\process_controller.py", line 25, in __init__
+    self.db = db_manager or DatabaseManager()
+                            ~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\models\database_model.py", line 22, in __init__
+    self.db_path = db_path or DB_CONFIG['nome_arquivo']
+                              ~~~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'nome_arquivo'
+2025-11-05 13:18:55 - interface - ERROR - log_error:64 - Erro ao executar aplicação: KeyError: 'nome_arquivo'
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 2013, in run_application
+    view.run()
+    ~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1742, in run
+    self.setup_controllers()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 213, in setup_controllers
+    self.controllers['process'] = ProcessController()
+                                  ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\controllers\process_controller.py", line 25, in __init__
+    self.db = db_manager or DatabaseManager()
+                            ~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\models\database_model.py", line 22, in __init__
+    self.db_path = db_path or DB_CONFIG['nome_arquivo']
+                              ~~~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'nome_arquivo'
+2025-11-05 13:22:09 - interface - ERROR - log_error:64 - Erro ao abrir janela de restauração: ImportError: cannot import name 'DatabaseModel' from 'models.database_model' (C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\models\database_model.py)
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1237, in _open_restore_window
+    from models.database_model import DatabaseModel
+ImportError: cannot import name 'DatabaseModel' from 'models.database_model' (C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\models\database_model.py). Did you mean: 'database_model'?
+2025-11-05 13:22:13 - interface - ERROR - log_error:64 - Erro ao abrir janela de restauração: ImportError: cannot import name 'DatabaseModel' from 'models.database_model' (C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\models\database_model.py)
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1237, in _open_restore_window
+    from models.database_model import DatabaseModel
+ImportError: cannot import name 'DatabaseModel' from 'models.database_model' (C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\models\database_model.py). Did you mean: 'database_model'?
+2025-11-05 14:50:52 - interface - ERROR - log_error:64 - Erro ao executar aplicação: TclError: cannot use geometry manager grid inside . which already has slaves managed by pack
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1761, in run
+    self.create_main_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 233, in create_main_window
+    self._create_widgets()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 313, in _create_widgets
+    self._create_form_frame()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 328, in _create_form_frame
+    self._create_form_fields(frame_cadastro)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 353, in _create_form_fields
+    parent.grid_configure(padx=20)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\tkinter\__init__.py", line 2693, in grid_configure
+    self.tk.call(
+    ~~~~~~~~~~~~^
+          ('grid', 'configure', self._w)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          + self._options(cnf, kw))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: cannot use geometry manager grid inside . which already has slaves managed by pack
+2025-11-05 14:50:52 - interface - ERROR - log_error:64 - Erro ao executar aplicação: TclError: cannot use geometry manager grid inside . which already has slaves managed by pack
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 2031, in run_application
+    view.run()
+    ~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1761, in run
+    self.create_main_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 233, in create_main_window
+    self._create_widgets()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 313, in _create_widgets
+    self._create_form_frame()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 328, in _create_form_frame
+    self._create_form_fields(frame_cadastro)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 353, in _create_form_fields
+    parent.grid_configure(padx=20)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\tkinter\__init__.py", line 2693, in grid_configure
+    self.tk.call(
+    ~~~~~~~~~~~~^
+          ('grid', 'configure', self._w)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          + self._options(cnf, kw))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: cannot use geometry manager grid inside . which already has slaves managed by pack
+2025-11-05 15:10:51 - interface - ERROR - log_error:64 - Erro ao executar aplicação: AttributeError: 'MainView' object has no attribute '_create_reminder_frame'
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1724, in run
+    self.create_main_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 233, in create_main_window
+    self._create_widgets()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 296, in _create_widgets
+    self._create_form_frame()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 311, in _create_form_frame
+    self._create_form_fields(frame_cadastro)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 402, in _create_form_fields
+    self._create_reminder_frame(parent)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainView' object has no attribute '_create_reminder_frame'. Did you mean: '_create_search_frame'?
+2025-11-05 15:10:51 - interface - ERROR - log_error:64 - Erro ao executar aplicação: AttributeError: 'MainView' object has no attribute '_create_reminder_frame'
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1994, in run_application
+    view.run()
+    ~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1724, in run
+    self.create_main_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 233, in create_main_window
+    self._create_widgets()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 296, in _create_widgets
+    self._create_form_frame()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 311, in _create_form_frame
+    self._create_form_fields(frame_cadastro)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 402, in _create_form_fields
+    self._create_reminder_frame(parent)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainView' object has no attribute '_create_reminder_frame'. Did you mean: '_create_search_frame'?
+2025-11-05 16:06:36 - interface - ERROR - log_error:64 - Erro ao executar aplicação: KeyError: 'lembretes'
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1737, in run
+    self.create_main_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 233, in create_main_window
+    self._create_widgets()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 296, in _create_widgets
+    self._create_form_frame()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 311, in _create_form_frame
+    self._create_form_fields(frame_cadastro)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 423, in _create_form_fields
+    variable=self.variables['lembretes'],
+             ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'lembretes'
+2025-11-05 16:06:36 - interface - ERROR - log_error:64 - Erro ao executar aplicação: KeyError: 'lembretes'
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 2007, in run_application
+    view.run()
+    ~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1737, in run
+    self.create_main_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 233, in create_main_window
+    self._create_widgets()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 296, in _create_widgets
+    self._create_form_frame()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 311, in _create_form_frame
+    self._create_form_fields(frame_cadastro)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 423, in _create_form_fields
+    variable=self.variables['lembretes'],
+             ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'lembretes'
+2025-11-05 16:07:13 - interface - ERROR - log_error:64 - Erro ao executar aplicação: TclError: cannot use geometry manager pack inside .!labelframe which already has slaves managed by grid
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1737, in run
+    self.create_main_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 233, in create_main_window
+    self._create_widgets()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 296, in _create_widgets
+    self._create_form_frame()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 314, in _create_form_frame
+    self._create_form_buttons(frame_cadastro)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 444, in _create_form_buttons
+    frame_botoes_container.pack(anchor="center", pady=20)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\tkinter\__init__.py", line 2596, in pack_configure
+    self.tk.call(
+    ~~~~~~~~~~~~^
+          ('pack', 'configure', self._w)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          + self._options(cnf, kw))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: cannot use geometry manager pack inside .!labelframe which already has slaves managed by grid
+2025-11-05 16:07:13 - interface - ERROR - log_error:64 - Erro ao executar aplicação: TclError: cannot use geometry manager pack inside .!labelframe which already has slaves managed by grid
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 2007, in run_application
+    view.run()
+    ~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1737, in run
+    self.create_main_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 233, in create_main_window
+    self._create_widgets()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 296, in _create_widgets
+    self._create_form_frame()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 314, in _create_form_frame
+    self._create_form_buttons(frame_cadastro)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 444, in _create_form_buttons
+    frame_botoes_container.pack(anchor="center", pady=20)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\tkinter\__init__.py", line 2596, in pack_configure
+    self.tk.call(
+    ~~~~~~~~~~~~^
+          ('pack', 'configure', self._w)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          + self._options(cnf, kw))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: cannot use geometry manager pack inside .!labelframe which already has slaves managed by grid
+2025-11-06 07:44:24 - interface - ERROR - log_error:64 - Erro ao executar aplicação: TclError: cannot use geometry manager pack inside .!labelframe which already has slaves managed by grid
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1714, in run
+    self.create_main_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 233, in create_main_window
+    self._create_widgets()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 296, in _create_widgets
+    self._create_form_frame()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 314, in _create_form_frame
+    self._create_form_buttons(frame_cadastro)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 424, in _create_form_buttons
+    frame_botoes.pack(pady=10)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\tkinter\__init__.py", line 2596, in pack_configure
+    self.tk.call(
+    ~~~~~~~~~~~~^
+          ('pack', 'configure', self._w)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          + self._options(cnf, kw))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: cannot use geometry manager pack inside .!labelframe which already has slaves managed by grid
+2025-11-06 07:44:24 - interface - ERROR - log_error:64 - Erro ao executar aplicação: TclError: cannot use geometry manager pack inside .!labelframe which already has slaves managed by grid
+Traceback (most recent call last):
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1984, in run_application
+    view.run()
+    ~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 1714, in run
+    self.create_main_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 233, in create_main_window
+    self._create_widgets()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 296, in _create_widgets
+    self._create_form_frame()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 314, in _create_form_frame
+    self._create_form_buttons(frame_cadastro)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\User\OneDrive\MeuGestor\TRAE\MiniGestor_TRAE\views\main_view.py", line 424, in _create_form_buttons
+    frame_botoes.pack(pady=10)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\tkinter\__init__.py", line 2596, in pack_configure
+    self.tk.call(
+    ~~~~~~~~~~~~^
+          ('pack', 'configure', self._w)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          + self._options(cnf, kw))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: cannot use geometry manager pack inside .!labelframe which already has slaves managed by grid
