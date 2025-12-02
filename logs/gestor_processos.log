@@ -383,3 +383,7 @@ _tkinter.TclError: cannot use geometry manager pack inside .!labelframe which al
 2025-12-02 08:33:12 - gestor_processos - INFO - log_operation:74 - Verificação de dependências concluída - SUCCESS
 2025-12-02 08:33:12 - gestor_processos - INFO - log_operation:74 - Iniciando interface gráfica - SUCCESS
 2025-12-02 08:33:17 - gestor_processos - INFO - log_operation:74 - Finalizando MiniGestor - SUCCESS
+2025-12-02 15:20:43 - gestor_processos - INFO - log_operation:74 - Iniciando MiniGestor v2.0 - SUCCESS
+2025-12-02 15:20:43 - gestor_processos - INFO - log_operation:74 - Verificação de dependências concluída - SUCCESS
+2025-12-02 15:20:43 - gestor_processos - INFO - log_operation:74 - Iniciando interface gráfica - SUCCESS
+2025-12-02 15:20:45 - gestor_processos - INFO - log_operation:74 - Finalizando MiniGestor - SUCCESS

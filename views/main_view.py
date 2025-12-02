@@ -252,16 +252,26 @@ class MainView:
         return self.janela
         
     def _center_window(self):
-        """Centraliza a janela na tela"""
         width, height = UI_CONFIG.get('window_size', (860, 650))
-        
-        screen_width = self.janela.winfo_screenwidth()
-        screen_height = self.janela.winfo_screenheight()
-        
-        x = (screen_width - width) // 2
-        y = (screen_height - height) // 2
-        
-        self.janela.geometry(f"{width}x{height}+{x}+{y}")
+        try:
+            screen_width = self.janela.winfo_screenwidth()
+            screen_height = self.janela.winfo_screenheight()
+            width = min(width, max(1, screen_width - 20))
+            height = min(height, max(1, screen_height - 40))
+            x = (screen_width - width) // 2
+            y = (screen_height - height) // 6
+            x = max(0, x)
+            y = max(0, y)
+            self.janela.geometry(f"{width}x{height}+{x}+{y}")
+            try:
+                self.janela.maxsize(screen_width, screen_height)
+            except Exception:
+                pass
+        except Exception:
+            try:
+                self.janela.geometry("800x600+10+10")
+            except Exception:
+                pass
         
     def _setup_styles(self):
         """Configura os estilos da interface"""
