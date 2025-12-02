@@ -1862,7 +1862,6 @@ def handle_escape(event=None):
     limpar_campos()
 
 
-#     return "break"  # Isso impede que o evento ESC propague para outros handlers
 
 def visualizar_processo(event=None):
     print("🔍 visualizar_processo chamada!")
@@ -1883,19 +1882,19 @@ def visualizar_processo(event=None):
     print(f"📊 Dados do processo: {processo}")
 
     # ✅ CORREÇÃO: Configurar todos os campos como editáveis inicialmente
-    campos = [entrada_numero, entrada_secretaria, entrada_licitacao, entrada_modalidade,
-              entrada_recebimento, entrada_devolucao, entrada_entregue_por,
-              entrada_devolvido_a, entrada_contratado]
+    campos = [
+        entrada_numero, entrada_secretaria, entrada_licitacao, entrada_modalidade,
+        entrada_recebimento, entrada_devolucao, entrada_entregue_por,
+        entrada_devolvido_a, entrada_contratado
+    ]
 
     for campo in campos:
         campo.config(state='normal')
-    try:
-        entrada_descricao.config(state='disabled', bg="#ECEFF1")
-    except Exception:
-        pass
+
+    # ✅ NÃO DESABILITA mais a caixa de texto de observações aqui
 
     try:
-        # tk.Número do processo
+        # Número do processo
         numero_processo = str(processo[1])
         entrada_numero.delete(0, tk.END)
         entrada_numero.insert(0, numero_processo)
@@ -1910,7 +1909,6 @@ def visualizar_processo(event=None):
         )
         entrada_secretaria.delete(0, tk.END)
         entrada_secretaria.insert(0, secretaria_formatada)
-        # ✅ CORREÇÃO: Secretaria fica readonly mas com binds ativos
         entrada_secretaria.config(state='readonly')
 
         # Licitação
@@ -1944,7 +1942,6 @@ def visualizar_processo(event=None):
         except Exception:
             pass
         entrada_devolucao.delete(0, tk.END)
-        # Exibir vazio quando o valor for textual 'None'
         valor_devolucao = (
             "" if (isinstance(data_entrega, str) and data_entrega.strip().lower() == "none")
             else (data_entrega if data_entrega else "")
@@ -1962,22 +1959,16 @@ def visualizar_processo(event=None):
         entrada_devolvido_a.insert(0, processo[9] if len(processo) > 9 else "")
         entrada_devolvido_a.config(state='readonly')
 
-        # Contratado (posição 10)
+        # Contratado
         entrada_contratado.delete(0, tk.END)
         contratado_valor = processo[10] if len(processo) > 10 and processo[10] is not None else ""
         entrada_contratado.insert(0, contratado_valor)
         entrada_contratado.config(state='readonly')
 
-        # Descrição (posição 11)
-        entrada_descricao.delete("1.0", tk.END)
-        descricao_valor = processo[11] if len(processo) > 11 and processo[11] is not None else ""
-        entrada_descricao.insert("1.0", descricao_valor)
-        try:
-            entrada_descricao.config(state='disabled', bg="#ECEFF1")
-        except Exception:
-            pass
+        descricao_texto = _obter_descricao_item(item_selecionado, processo)
+        _set_observacoes_text(descricao_texto, True)
 
-        # ✅ CORREÇÃO: Configura o botão como "Atualizar" e HABILITADO
+        # ✅ Configura o botão como "Atualizar" e habilitado
         botao_cadastrar.config(
             text="Atualizar",
             state='normal',
@@ -1985,16 +1976,12 @@ def visualizar_processo(event=None):
         )
         print("✅ Todos os campos preenchidos com sucesso!")
 
-        # ✅ CORREÇÃO: Remove binds duplicados - fazer isso apenas uma vez na inicialização
-        # Os binds devem ser configurados uma única vez, não toda vez que visualiza
-
     except Exception as e:
         print(f"❌ Erro ao visualizar processo: {e}")
         messagebox.showerror("Erro", f"Erro ao carregar processo: {e}")
 
     # Permite cancelar com ESC
     janela.bind("<Escape>", handle_escape)
-
 
 def ativar_edicao_campo(event):
     widget = event.widget
@@ -5029,9 +5016,7 @@ def editar_processo():
     entrada_contratado.insert(0, processo[10] if len(processo) > 10 and processo[10] else "")
     entrada_contratado.config(state='normal')
 
-    entrada_descricao.delete("1.0", tk.END)
-    entrada_descricao.insert("1.0", processo[11] if len(processo) > 11 else "")
-    entrada_descricao.config(state='normal', bg="white")
+    _set_observacoes_text(_obter_descricao_item(item_selecionado, processo), True)
 
     # ✅ Aqui é onde você coloca a conversão para string
     numero_processo_original = str(processo[1])
@@ -5268,7 +5253,11 @@ def excluir_processo():
         messagebox.showwarning("Aviso", "Selecione um ou mais processos para excluir!")
         return
 
-    
+    # Impede a exclusão de todos os registros
+    total_registros = len(tabela.get_children())
+    if len(itens_selecionados) >= total_registros:
+        messagebox.showwarning("Aviso", "Não é permitido apagar todos os registros!")
+        return
 
     # Confirma a exclusão com o usuário
     quantidade = len(itens_selecionados)
@@ -5368,60 +5357,7 @@ def excluir_processo():
         except:
             pass
 
-def excluir_todos_processos():
-    global registros_apagados, toggle_var
-    total = len(tabela.get_children())
-    if total == 0:
-        messagebox.showinfo("Aviso", "Não há registros para excluir.")
-        return
-    if not messagebox.askyesno(
-        "Confirmar Exclusão",
-        f"Você está prestes a excluir TODOS os {total} registros.\n\nOs registros serão movidos para 'trabalhos_excluídos'.\n\nDeseja continuar?"
-    ):
-        return
-    processos_excluidos = []
-    try:
-        try:
-            data_exclusao = DateUtils.obter_data_hora_atual_banco()
-        except Exception:
-            data_exclusao = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        for item_id in tabela.get_children(""):
-            valores = tabela.item(item_id)['values']
-            numero_processo = str(valores[1]).strip()
-            cursor.execute(
-                '''
-                INSERT INTO trabalhos_excluidos (
-                    data_exclusao, data_registro, numero_processo, secretaria, numero_licitacao,
-                    situacao, modalidade, data_inicio, data_entrega, entregue_por, devolvido_a, contratado, descricao
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                ''',
-                (data_exclusao, *valores)
-            )
-            processos_excluidos.append(numero_processo)
-        cursor.execute('DELETE FROM trabalhos_realizados')
-        conn.commit()
-        try:
-            backup_automatico(processos_excluidos)
-        except Exception:
-            pass
-        for item_id in tabela.get_children(""):
-            tabela.delete(item_id)
-        registros_apagados += total
-        toggle_var.set(False)
-        try:
-            checkbox_selecionar_todos.deselect()
-        except Exception:
-            pass
-        contar_registros()
-        listar_processos()
-        messagebox.showinfo("Sucesso", f"Todos os {total} registros foram excluídos.")
-    except Exception as e:
-        messagebox.showerror("Erro", f"Falha ao excluir todos os registros:\n{str(e)}")
-        try:
-            conn.rollback()
-        except Exception:
-            pass
-        
+
 def limpar_backups_antigos(dias=30):
     """Remove registros antigos da tabela de backups.
 
@@ -6761,47 +6697,6 @@ def ordenar_coluna(coluna):
 # 2. Vincule corretamente o evento ao cabeçalho
 
 
-def center_window(window, width=860, height=650):
-    """Centraliza uma janela na tela com dimensões específicas.
-
-    Calcula a posição para centralizar a janela na tela, garantindo que
-    as dimensões não excedam o tamanho da tela disponível, e aplica
-    a geometria calculada à janela.
-
-    Args:
-        window (Tk/Toplevel): A janela a ser centralizada.
-        width (int): Largura desejada para a janela. Padrão é 860.
-        height (int): Altura desejada para a janela. Padrão é 650.
-    """
-    try:
-        # Obtém as dimensões da tela
-        screen_width = window.winfo_screenwidth()
-        screen_height = window.winfo_screenheight()
-
-        # Garante que as dimensões não excedam o tamanho da tela
-        width = min(width, screen_width - 20)  # Margem de 20 pixels
-        height = min(height, screen_height - 40)  # Margem de 40 pixels
-
-        # Calcula as coordenadas para centralizar
-        x = (screen_width - width) // 2
-        y = (screen_height - height) // 6  # Posiciona um pouco acima do centro
-
-        # Garante que as coordenadas não sejam negativas
-        x = max(0, x)
-        y = max(0, y)
-
-        # Aplica a geometria calculada à janela
-        window.geometry(f"{width}x{height}+{x}+{y}")
-    except Exception as e:
-        print(f"[ERRO] Falha ao centralizar janela: {e}")
-        # Em caso de erro, tenta definir uma geometria padrão segura
-        try:
-            window.geometry("800x600+10+10")
-        except:
-            pass
-    window.maxsize(screen_width, screen_height)
-
-
 def ativar_botao_atualizar():
     """Ativa o botão Atualizar somente quando há seleção válida na tabela"""
     try:
@@ -7990,18 +7885,6 @@ label_restaurados = tk.Label(frame_topo_lista, text="Restaurados: 0", font=("Seg
                              bg="#ECEFF1", fg="#37474F")
 label_restaurados.pack(side=tk.LEFT, padx=(0, 0))
 
-btn_apagar_todos = tk.Button(
-    frame_topo_lista,
-    text="Apagar Todos",
-    command=excluir_todos_processos,
-    bg=BUTTON_DANGER_BG,
-    fg=BUTTON_DANGER_FG,
-    activebackground=BUTTON_DANGER_ACTIVE_BG,
-    activeforeground=BUTTON_DANGER_ACTIVE_FG,
-    highlightbackground=BUTTON_DANGER_HIGHLIGHT
-)
-btn_apagar_todos.pack(side=tk.RIGHT, padx=(0, 0))
-
 
 # Funções de foco personalizado para ciclo de TAB
 def foco_para_toggle_btn(event):
@@ -9006,8 +8889,6 @@ janela.bind("<Control-C>", ctrl_copy)
 janela.bind("<Control-x>", ctrl_cut)
 janela.bind("<Control-X>", ctrl_cut)
 # Removido bind de Ctrl+V para evitar colagens duplicadas; usar padrão do Tk
-# janela.bind("<Control-v>", ctrl_paste)
-# janela.bind("<Control-V>", ctrl_paste)
 janela.bind("<Control-s>", ctrl_salvar)
 janela.bind("<Control-S>", ctrl_salvar)
 janela.bind("<Control-f>", ctrl_buscar)
