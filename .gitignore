@@ -1,0 +1,28 @@
+# Bancos de dados e estado temporário
+*.db
+*.db-shm
+*.db-wal
+
+# Backups e arquivos comprimidos
+*.zip
+*.bak
+backup/
+MiniBanco/
+
+# Logs
+*.log
+logs/
+
+# Artefatos locais e cache
+__pycache__/
+.pytest_cache/
+.venv/
+env/
+venv/
+.DS_Store
+Thumbs.db
+
+# Configurações locais não sensíveis (mantenha apenas se desejar versionar)
+config_windows.json
+config_colunas.json
+config_windows_local.json
