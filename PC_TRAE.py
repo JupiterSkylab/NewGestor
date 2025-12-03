@@ -1626,6 +1626,25 @@ def carregar_nomes_contratado():
     return [row[0] for row in cursor.fetchall()]
 
 
+def recarregar_listas_autocomplete():
+    global nomes_autocomplete, nomes_contratado
+    try:
+        nomes_autocomplete = carregar_nomes_autocomplete()
+        nomes_contratado = carregar_nomes_contratado()
+        try:
+            entrada_entregue_por.completion_list = nomes_autocomplete
+            entrada_devolvido_a.completion_list = nomes_autocomplete
+            entrada_contratado.completion_list = nomes_contratado
+        except Exception:
+            pass
+        try:
+            cache.invalidate('nomes_autocomplete')
+            cache.invalidate('nomes_contratado')
+        except Exception:
+            pass
+    except Exception:
+        pass
+
 def exportar_banco():
     global conn, cursor, registros_exportados
     caminho_atual = caminho_banco
@@ -3987,8 +4006,7 @@ def cadastrar_processo():
         cache.invalidate('count_andamento')
         cache.invalidate('nomes_autocomplete')
 
-        # Atualiza autocomplete com os três campos
-        atualizar_lista_autocomplete(entregue_por, devolvido_a, contratado)
+        recarregar_listas_autocomplete()
 
         messagebox.showinfo("Sucesso", "Processo cadastrado com sucesso!")
         limpar_campos()
@@ -4888,6 +4906,11 @@ def restaurar_registro_excluido(numero_processo):
         listar_processos()
         contar_registros()
 
+        try:
+            recarregar_listas_autocomplete()
+        except Exception:
+            pass
+
         # Encontra e destaca o registro restaurado
         for item in tabela.get_children():
             if tabela.item(item)['values'][1] == numero_processo:
@@ -5093,8 +5116,7 @@ def atualizar_processo(numero_processo_original):
         except Exception:
             pass
 
-        # Atualiza lista de autocompletar
-        atualizar_lista_autocomplete(entregue_por, devolvido_a, contratado)
+        recarregar_listas_autocomplete()
 
         # Atualiza contadores e interface
         registros_editados += 1
