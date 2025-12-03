@@ -1,36 +1,36 @@
 # --- Bibliotecas padrão --- #
+import ctypes
+import json
+import logging
+import math
 import os
 import re
-import json
 import shutil
 import sqlite3
-import threading
 import subprocess
-import unicodedata
-import time
 import sys
-import logging
-from datetime import datetime, timedelta
-from contextlib import closing
-from typing import List, Dict, Any, Optional, Tuple, Union
-
-# --- Bibliotecas de terceiros ---
-import pyperclip
-from openpyxl import Workbook
-from openpyxl.styles import Font, Alignment, Border, Side, PatternFill
-from openpyxl.utils import get_column_letter
-from dateutil.relativedelta import relativedelta
-from reportlab.lib.pagesizes import A4
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
-from reportlab.lib.styles import getSampleStyleSheet
-
+import threading
+import time
 # --- Bibliotecas da interface Tkinter ---
 import tkinter as tk
 import tkinter.font
-import ctypes
+import unicodedata
+from contextlib import closing
 from ctypes import wintypes
-from tkinter import ttk, filedialog, messagebox, Toplevel, Listbox, Button, END, Menu
-import math
+from datetime import datetime, timedelta
+from tkinter import (END, Button, Listbox, Menu, Toplevel, filedialog,
+                     messagebox, ttk)
+from typing import Any, Dict, List, Optional, Tuple, Union
+
+# --- Bibliotecas de terceiros ---
+import pyperclip
+from dateutil.relativedelta import relativedelta
+from openpyxl import Workbook
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+from openpyxl.utils import get_column_letter
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
 
 # --- Constantes e Configurações --- #
 # Caminhos de arquivos
@@ -83,32 +83,6 @@ def center_window(window, width=860, height=650):
     except Exception:
         try:
             window.geometry("800x600+10+10")
-        except Exception:
-            pass
-
-
-def _obter_descricao_item(item_id, processo=None):
-    try:
-        v = tabela.set(item_id, 'descricao')
-        return v if v is not None else ""
-    except Exception:
-        if processo and len(processo) > 11 and processo[11] is not None:
-            return processo[11]
-        return ""
-
-
-def _set_observacoes_text(text, editable):
-    try:
-        entrada_descricao.config(state='normal')
-    except Exception:
-        pass
-    entrada_descricao.delete("1.0", tk.END)
-    entrada_descricao.insert("1.0", text or "")
-    if editable:
-        entrada_descricao.config(bg="white")
-    else:
-        try:
-            entrada_descricao.config(state='disabled', bg="#ECEFF1")
         except Exception:
             pass
 
@@ -1862,6 +1836,7 @@ def handle_escape(event=None):
     limpar_campos()
 
 
+#     return "break"  # Isso impede que o evento ESC propague para outros handlers
 
 def visualizar_processo(event=None):
     print("🔍 visualizar_processo chamada!")
@@ -1965,8 +1940,11 @@ def visualizar_processo(event=None):
         entrada_contratado.insert(0, contratado_valor)
         entrada_contratado.config(state='readonly')
 
-        descricao_texto = _obter_descricao_item(item_selecionado, processo)
-        _set_observacoes_text(descricao_texto, True)
+        # ✅ Observações (posição 11) - agora visível e editável
+        entrada_descricao.config(state='normal', bg='white')
+        entrada_descricao.delete("1.0", tk.END)
+        descricao_valor = processo[11] if len(processo) > 11 and processo[11] is not None else ""
+        entrada_descricao.insert("1.0", descricao_valor)
 
         # ✅ Configura o botão como "Atualizar" e habilitado
         botao_cadastrar.config(
@@ -5016,7 +4994,9 @@ def editar_processo():
     entrada_contratado.insert(0, processo[10] if len(processo) > 10 and processo[10] else "")
     entrada_contratado.config(state='normal')
 
-    _set_observacoes_text(_obter_descricao_item(item_selecionado, processo), True)
+    entrada_descricao.delete("1.0", tk.END)
+    entrada_descricao.insert("1.0", processo[11] if len(processo) > 11 else "")
+    entrada_descricao.config(state='normal', bg="white")
 
     # ✅ Aqui é onde você coloca a conversão para string
     numero_processo_original = str(processo[1])
@@ -5396,6 +5376,7 @@ def interpretar_periodo_tempo(termo_busca):
     """
     import re
     from datetime import datetime, timedelta
+
     from dateutil.relativedelta import relativedelta
 
     termo = termo_busca.strip().lower()
@@ -5858,10 +5839,11 @@ def exportar_pdf():
     """
     try:
         # Importa as bibliotecas necessárias
-        from reportlab.lib.pagesizes import A4
-        from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
-        from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
         from reportlab.lib import colors
+        from reportlab.lib.pagesizes import A4
+        from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+        from reportlab.platypus import (Paragraph, SimpleDocTemplate, Spacer,
+                                        Table, TableStyle)
 
         # Verifica se há itens selecionados, se não houver, seleciona todos
         itens_selecionados = tabela.selection()
@@ -6099,6 +6081,7 @@ def exportar_excel():
     try:
         # Importa as bibliotecas necessárias
         from math import ceil
+
         from openpyxl.utils import get_column_letter
 
         # Verifica se há itens selecionados, se não houver, seleciona todos
@@ -6695,6 +6678,47 @@ def ordenar_coluna(coluna):
 
 
 # 2. Vincule corretamente o evento ao cabeçalho
+
+
+def center_window(window, width=860, height=650):
+    """Centraliza uma janela na tela com dimensões específicas.
+
+    Calcula a posição para centralizar a janela na tela, garantindo que
+    as dimensões não excedam o tamanho da tela disponível, e aplica
+    a geometria calculada à janela.
+
+    Args:
+        window (Tk/Toplevel): A janela a ser centralizada.
+        width (int): Largura desejada para a janela. Padrão é 860.
+        height (int): Altura desejada para a janela. Padrão é 650.
+    """
+    try:
+        # Obtém as dimensões da tela
+        screen_width = window.winfo_screenwidth()
+        screen_height = window.winfo_screenheight()
+
+        # Garante que as dimensões não excedam o tamanho da tela
+        width = min(width, screen_width - 20)  # Margem de 20 pixels
+        height = min(height, screen_height - 40)  # Margem de 40 pixels
+
+        # Calcula as coordenadas para centralizar
+        x = (screen_width - width) // 2
+        y = (screen_height - height) // 6  # Posiciona um pouco acima do centro
+
+        # Garante que as coordenadas não sejam negativas
+        x = max(0, x)
+        y = max(0, y)
+
+        # Aplica a geometria calculada à janela
+        window.geometry(f"{width}x{height}+{x}+{y}")
+    except Exception as e:
+        print(f"[ERRO] Falha ao centralizar janela: {e}")
+        # Em caso de erro, tenta definir uma geometria padrão segura
+        try:
+            window.geometry("800x600+10+10")
+        except:
+            pass
+    window.maxsize(screen_width, screen_height)
 
 
 def ativar_botao_atualizar():
@@ -8889,6 +8913,8 @@ janela.bind("<Control-C>", ctrl_copy)
 janela.bind("<Control-x>", ctrl_cut)
 janela.bind("<Control-X>", ctrl_cut)
 # Removido bind de Ctrl+V para evitar colagens duplicadas; usar padrão do Tk
+# janela.bind("<Control-v>", ctrl_paste)
+# janela.bind("<Control-V>", ctrl_paste)
 janela.bind("<Control-s>", ctrl_salvar)
 janela.bind("<Control-S>", ctrl_salvar)
 janela.bind("<Control-f>", ctrl_buscar)
